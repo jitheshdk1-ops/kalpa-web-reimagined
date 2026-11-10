@@ -1,65 +1,66 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
+import { getAssetUrl } from '../../utils/asset';
 
 const portfolioProjects = [
   {
     id: 1,
-    img: '/assets/images/portfolio/portfolio-01-greensynth.jpg',
+    img: getAssetUrl('assets/images/portfolio/portfolio-01-greensynth.jpg'),
     alt: 'GreenSynth Herbals Logo & Identity',
   },
   {
     id: 2,
-    img: '/assets/images/portfolio/portfolio-02-hro.jpg',
+    img: getAssetUrl('assets/images/portfolio/portfolio-02-hro.jpg'),
     alt: 'HRO Natural Stones 3D Brand Mark',
   },
   {
     id: 3,
-    img: '/assets/images/portfolio/portfolio-03-didyuh-white.jpg',
+    img: getAssetUrl('assets/images/portfolio/portfolio-03-didyuh-white.jpg'),
     alt: 'Didyuh Innovations Minimal Logo',
   },
   {
     id: 4,
-    img: '/assets/images/portfolio/portfolio-04-farmbandi.jpg',
+    img: getAssetUrl('assets/images/portfolio/portfolio-04-farmbandi.jpg'),
     alt: 'Farm Bandi Finger Millet Noodles Packaging',
   },
   {
     id: 5,
-    img: '/assets/images/portfolio/portfolio-05-didyuh-dark.jpg',
+    img: getAssetUrl('assets/images/portfolio/portfolio-05-didyuh-dark.jpg'),
     alt: 'Didyuh Innovations Monogram Design',
   },
   {
     id: 6,
-    img: '/assets/images/portfolio/portfolio-06-hrudayam.jpg',
+    img: getAssetUrl('assets/images/portfolio/portfolio-06-hrudayam.jpg'),
     alt: 'Hrudayam Calligraphy Brand Emblem',
   },
   {
     id: 7,
-    img: '/assets/images/portfolio/portfolio-07-marines-crown.jpg',
+    img: getAssetUrl('assets/images/portfolio/portfolio-07-marines-crown.jpg'),
     alt: 'Marines Crown Seafood Packaging',
   },
   {
     id: 8,
-    img: '/assets/images/portfolio/portfolio-08-parishudd.jpg',
+    img: getAssetUrl('assets/images/portfolio/portfolio-08-parishudd.jpg'),
     alt: 'Parishudd Urad Dal Packaging Pouch',
   },
   {
     id: 9,
-    img: '/assets/images/portfolio/portfolio-09-rk-foods.jpg',
+    img: getAssetUrl('assets/images/portfolio/portfolio-09-rk-foods.jpg'),
     alt: 'RK Foods Festive Chariots Artwork',
   },
   {
     id: 10,
-    img: '/assets/images/portfolio/portfolio-10-swaram.jpg',
+    img: getAssetUrl('assets/images/portfolio/portfolio-10-swaram.jpg'),
     alt: 'Swaram Flute Musical Brand Identity',
   },
   {
     id: 11,
-    img: '/assets/images/portfolio/portfolio-11-atinav.jpg',
+    img: getAssetUrl('assets/images/portfolio/portfolio-11-atinav.jpg'),
     alt: 'Atinav Enterprises 3D Monogram',
   },
   {
     id: 12,
-    img: '/assets/images/portfolio/portfolio-01-greensynth.jpg',
+    img: getAssetUrl('assets/images/portfolio/portfolio-01-greensynth.jpg'),
     alt: 'GreenSynth Herbals Creative Design',
   },
 ];

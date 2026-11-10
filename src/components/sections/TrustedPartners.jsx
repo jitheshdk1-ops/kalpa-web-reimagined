@@ -1,10 +1,11 @@
 import React from 'react';
+import { getAssetUrl } from '../../utils/asset';
 
 const clientLogos = Array.from({ length: 12 }, (_, i) => {
   const num = String(i + 1).padStart(2, '0');
   return {
     id: i + 1,
-    src: `/assets/images/clients/client-logo-${num}.png`,
+    src: getAssetUrl(`assets/images/clients/client-logo-${num}.png`),
     alt: `Trusted Partner Logo ${i + 1}`,
   };
 });

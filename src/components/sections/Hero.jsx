@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import { useHeroCanvas } from '../../hooks/useHeroCanvas';
+import { getAssetUrl } from '../../utils/asset';
 
 export default function Hero() {
   const containerRef = useRef(null);
@@ -96,7 +97,7 @@ export default function Hero() {
 
                 <div className="google-review-badge-wrap">
                   <img
-                    src="/assets/images/google-review.png"
+                    src={getAssetUrl('assets/images/google-review.png')}
                     alt="Kalpa Media - 4.9 Stars, 41 Google reviews - Graphic designer in Udupi, Karnataka"
                     className="google-review-badge-img"
                   />

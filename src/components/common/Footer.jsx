@@ -1,4 +1,5 @@
 import React from 'react';
+import { getAssetUrl } from '../../utils/asset';
 
 export default function Footer() {
   return (
@@ -8,7 +9,7 @@ export default function Footer() {
         <div className="footer-top-mark reveal-item">
           <a href="#home" aria-label="Kalpa Media Home">
             <img
-              src="/assets/images/kalpa-footer-logo.png"
+              src={getAssetUrl('assets/images/kalpa-footer-logo.png')}
               alt="Kalpa Media — The Smart Design Agency"
               className="footer-logo-img"
             />

@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { getAssetUrl } from '../utils/asset';
 
 /**
  * Custom hook for Hero scroll-bound 2D canvas image sequence scrubbing.
@@ -24,7 +25,7 @@ export function useHeroCanvas({ containerRef, canvasRef, uiLayerRef }) {
 
     const getFramePath = (index) => {
       const padded = String(index).padStart(6, '0');
-      return `/assets/images/slides/frame_${padded}.png`;
+      return getAssetUrl(`assets/images/slides/frame_${padded}.png`);
     };
 
     const getClosestLoadedFrame = (index) => {

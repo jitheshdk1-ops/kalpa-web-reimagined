@@ -1,4 +1,5 @@
 import React from 'react';
+import { getAssetUrl } from '../../utils/asset';
 
 export default function BentoGrid() {
   return (
@@ -43,7 +44,7 @@ export default function BentoGrid() {
           {/* Card 2: Solid Black with Vibrant Yellow Kinetic Streaks */}
           <article className="bento-card card reveal-card bento-card-2">
             <div className="card-bg-shape"></div>
-            <img src="/assets/images/card-impact.svg" alt="Digital Platforms background" className="bento-card-bg" />
+            <img src={getAssetUrl('assets/images/card-impact.svg')} alt="Digital Platforms background" className="bento-card-bg" />
             <div className="bento-card-overlay"></div>
             <div className="bento-card-content">
               <div className="bento-card-top">
@@ -83,7 +84,7 @@ export default function BentoGrid() {
           {/* Card 3: Solid Black with Yellow Neon Speed Stream */}
           <article className="bento-card card reveal-card bento-card-3">
             <div className="card-bg-shape"></div>
-            <img src="/assets/images/card-creative.svg" alt="Growth Marketing background" className="bento-card-bg" />
+            <img src={getAssetUrl('assets/images/card-creative.svg')} alt="Growth Marketing background" className="bento-card-bg" />
             <div className="bento-card-overlay"></div>
             <div className="bento-card-content">
               <div className="bento-card-top">

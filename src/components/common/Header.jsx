@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { getAssetUrl } from '../../utils/asset';
 
 export default function Header() {
   const [activeLink, setActiveLink] = useState('home');
@@ -30,7 +31,7 @@ export default function Header() {
       <div className="container header-container">
         {/* Far Left Logo */}
         <a href="#home" className="brand-logo" aria-label="Kalpa Media Home">
-          <img src="/assets/images/kalpa-logo.png" alt="Kalpa Media Logo" className="brand-icon" />
+          <img src={getAssetUrl('assets/images/kalpa-logo.png')} alt="Kalpa Media Logo" className="brand-icon" />
         </a>
 
         {/* Center Navigation Links */}

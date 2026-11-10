@@ -1,11 +1,12 @@
 import React from 'react';
+import { getAssetUrl } from '../../utils/asset';
 
 const serviceCards = [
   {
     id: 'brand-strategy',
     title: 'Brand Strategy & Identity',
     desc: 'We build iconic visual identities and strategic brand foundations designed to elevate ambitious companies into uncontested cultural market leaders.',
-    mediaImg: '/assets/images/mockup-branding.svg',
+    mediaImg: getAssetUrl('assets/images/mockup-branding.svg'),
     mediaAlt: 'Brand Strategy and Identity Mockup',
     deliverables: [
       'Logo Design & Icons',
@@ -18,7 +19,7 @@ const serviceCards = [
     id: 'ui-ux',
     title: 'UI/UX Strategy & Design',
     desc: 'Engineering fluid, user-centered digital storefronts and bespoke web platforms calibrated for frictionless usability, maximum engagement, and rapid conversion.',
-    mediaImg: '/assets/images/mockup-uiux.svg',
+    mediaImg: getAssetUrl('assets/images/mockup-uiux.svg'),
     mediaAlt: 'UI/UX Strategy and Design Mockup',
     deliverables: [
       'UI/UX Strategy & Wireframing',
@@ -31,7 +32,7 @@ const serviceCards = [
     id: 'packaging-content',
     title: 'Packaging & Dynamic Content',
     desc: 'Creating tactile retail packaging and scroll-stopping visual motion assets that dominate physical shelves and drive exponential engagement on digital feeds.',
-    mediaImg: '/assets/images/mockup-packaging.svg',
+    mediaImg: getAssetUrl('assets/images/mockup-packaging.svg'),
     mediaAlt: 'Packaging and Dynamic Content Mockup',
     deliverables: [
       'Bespoke Packaging & Box Art',
@@ -44,7 +45,7 @@ const serviceCards = [
     id: 'performance-marketing',
     title: 'Performance Marketing',
     desc: 'We execute data-driven ad campaigns and targeted optimization strategies to maximize your ROI and scale your digital growth efficiently.',
-    mediaImg: '/assets/images/mockup-marketing.svg',
+    mediaImg: getAssetUrl('assets/images/mockup-marketing.svg'),
     mediaAlt: 'Performance Marketing and Analytics Mockup',
     deliverables: [
       'Search Engine Optimization (SEO)',
