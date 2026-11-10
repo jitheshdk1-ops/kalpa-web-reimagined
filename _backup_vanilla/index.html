@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Kinetic Studio — SMM &amp; Bold Creative Agency</title>
+  
+  <!-- Preconnect to Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- GSAP Animation Library -->
+  <script src="js/gsap.min.js"></script>
+
+  <!-- JavaScript -->
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+
+  <!-- ========================================================================
+       1. Header & Minimalist Navbar
+       ======================================================================== -->
+  <header class="site-header">
+    <div class="container header-container">
+      <!-- Far Left Logo -->
+      <a href="#" class="brand-logo" aria-label="Kalpa Media Home">
+        <img src="assets/images/kalpa-logo.png" alt="Kalpa Media Logo" class="brand-icon">
+      </a>
+
+      <!-- Center Navigation Links -->
+      <nav aria-label="Primary Navigation">
+        <ul class="navbar-nav">
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+          <li><a href="#blog" class="nav-link">Blog</a></li>
+        </ul>
+      </nav>
+
+      <!-- Right-Aligned Contact Pill Button -->
+      <div class="header-actions">
+        <a href="#contact" class="btn-pill-outline">Contact us</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ======================================================================
+         2. Hero Section (Scroll-Triggered Image Sequence Canvas)
+         ====================================================================== -->
+    <section class="hero-scroll-container" id="hero-scroll-container">
+      <div id="home" class="scroll-anchor"></div>
+      <div class="hero-sticky-wrapper">
+        <!-- High-Performance Canvas for Video Scrubbing -->
+        <canvas id="hero-canvas"></canvas>
+        <div class="hero-canvas-overlay" aria-hidden="true"></div>
+
+        <!-- Hero UI Layer (Elevated Above Canvas) -->
+        <div class="hero-ui-layer" id="hero-ui-layer">
+          <!-- Top Content Row -->
+          <div class="container hero-inner reveal-group">
+            <!-- Left-Aligned Content -->
+            <div class="hero-left">
+              <div class="hero-eyebrow-pill reveal-item">
+                <span class="eyebrow-dot" aria-hidden="true"></span>
+                <span>Welcome to Kalpa Media</span>
+              </div>
+              <h1 class="hero-headline reveal-item" style="transition-delay: 0.12s;">
+                The Smart Design Agency
+              </h1>
+              <a href="#services" class="btn-hero-pill reveal-item" style="transition-delay: 0.24s;">
+                <span class="pill-icon-glow" aria-hidden="true">
+                  <svg class="pill-arrow-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 8H13M13 8L8.5 3.5M13 8L8.5 12.5" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+                <span>Discover More</span>
+              </a>
+            </div>
+
+            <!-- Right Floating Glassmorphism Google Review Card -->
+            <div class="hero-right">
+              <aside class="detail-glass-card google-review-glass-card reveal-item" style="transition-delay: 0.36s;" aria-label="Kalpa Media Google Review">
+                <div class="detail-card-top google-review-top">
+                  <div class="google-brand-badge">
+                    <svg class="google-logo-icon" viewBox="0 0 24 24" width="18" height="18" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                      <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                      <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+                      <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+                    </svg>
+                    <span class="detail-card-title">Google Reviews</span>
+                  </div>
+                  <span class="google-verified-pill">
+                    <span class="status-dot-yellow" aria-hidden="true"></span>
+                    <span>4.9 / 5.0</span>
+                  </span>
+                </div>
+                
+                <div class="google-review-badge-wrap">
+                  <img src="assets/images/google-review.png" alt="Kalpa Media - 4.9 Stars, 41 Google reviews - Graphic designer in Udupi, Karnataka" class="google-review-badge-img">
+                </div>
+              </aside>
+            </div>
+          </div>
+
+          <!-- Subtle Scroll Scrubbing Indicator -->
+          <div class="scroll-scrub-indicator" aria-hidden="true">
+            <span class="scrub-dot"></span>
+            <span class="scrub-text">Scroll to scrub sequence</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         2b. Our Trusted Partners Section (Horizontal Auto-Scrolling Marquee)
+         ====================================================================== -->
+    <section class="partners-section" id="partners" aria-label="Our Trusted Partners">
+      <div class="container partners-header-container reveal-item">
+        <h2 class="partners-heading">Our Trusted Partners</h2>
+      </div>
+
+      <div class="partners-marquee-wrapper reveal-item" style="transition-delay: 0.15s;" aria-label="Our Trusted Partners Carousel">
+        <div class="partners-track">
+          <!-- Logo Set 1 -->
+          <div class="partners-group">
+            <div class="partner-logo-item"><img src="assets/images/clients/client-logo-01.png" alt="Trusted Partner Logo 1" class="partner-logo-img" loading="lazy"></div>
+            <div class="partner-logo-item"><img src="assets/images/clients/client-logo-02.png" alt="Trusted Partner Logo 2" class="partner-logo-img" loading="lazy"></div>
+            <div class="partner-logo-item"><img src="assets/images/clients/client-logo-03.png" alt="Trusted Partner Logo 3" class="partner-logo-img" loading="lazy"></div>
+            <div class="partner-logo-item"><img src="assets/images/clients/client-logo-04.png" alt="Trusted Partner Logo 4" class="partner-logo-img" loading="lazy"></div>
+            <div class="partner-logo-item"><img src="assets/images/clients/client-logo-05.png" alt="Trusted Partner Logo 5" class="partner-logo-img" loading="lazy"></div>
+            <div class="partner-logo-item"><img src="assets/images/clients/client-logo-06.png" alt="Trusted Partner Logo 6" class="partner-logo-img" loading="lazy"></div>
+            <div class="partner-logo-item"><img src="assets/images/clients/client-logo-07.png" alt="Trusted Partner Logo 7" class="partner-logo-img" loading="lazy"></div>
+            <div class="partner-logo-item"><img src="assets/images/clients/client-logo-08.png" alt="Trusted Partner Logo 8" class="partner-logo-img" loading="lazy"></div>
+            <div class="partner-logo-item"><img src="assets/images/clients/client-logo-09.png" alt="Trusted Partner Logo 9" class="partner-logo-img" loading="lazy"></div>
+            <div class="partner-logo-item"><img src="assets/images/clients/client-logo-10.png" alt="Trusted Partner Logo 10" class="partner-logo-img" loading="lazy"></div>
+            <div class="partner-logo-item"><img src="assets/images/clients/client-logo-11.png" alt="Trusted Partner Logo 11" class="partner-logo-img" loading="lazy"></div>
+            <div class="partner-logo-item"><img src="assets/images/clients/client-logo-12.png" alt="Trusted Partner Logo 12" class="partner-logo-img" loading="lazy"></div>
+          </div>
+
+          <!-- Logo Set 2 (Duplicate for Seamless Loop) -->
+          <div class="partners-group" aria-hidden="true">
+            <div class="partner-logo-item"><img src="assets/images/clients/client-logo-01.png" alt="" class="partner-logo-img" loading="lazy"></div>
+            <div class="partner-logo-item"><img src="assets/images/clients/client-logo-02.png" alt="" class="partner-logo-img" loading="lazy"></div>
+            <div class="partner-logo-item"><img src="assets/images/clients/client-logo-03.png" alt="" class="partner-logo-img" loading="lazy"></div>
+            <div class="partner-logo-item"><img src="assets/images/clients/client-logo-04.png" alt="" class="partner-logo-img" loading="lazy"></div>
+            <div class="partner-logo-item"><img src="assets/images/clients/client-logo-05.png" alt="" class="partner-logo-img" loading="lazy"></div>
+            <div class="partner-logo-item"><img src="assets/images/clients/client-logo-06.png" alt="" class="partner-logo-img" loading="lazy"></div>
+            <div class="partner-logo-item"><img src="assets/images/clients/client-logo-07.png" alt="" class="partner-logo-img" loading="lazy"></div>
+            <div class="partner-logo-item"><img src="assets/images/clients/client-logo-08.png" alt="" class="partner-logo-img" loading="lazy"></div>
+            <div class="partner-logo-item"><img src="assets/images/clients/client-logo-09.png" alt="" class="partner-logo-img" loading="lazy"></div>
+            <div class="partner-logo-item"><img src="assets/images/clients/client-logo-10.png" alt="" class="partner-logo-img" loading="lazy"></div>
+            <div class="partner-logo-item"><img src="assets/images/clients/client-logo-11.png" alt="" class="partner-logo-img" loading="lazy"></div>
+            <div class="partner-logo-item"><img src="assets/images/clients/client-logo-12.png" alt="" class="partner-logo-img" loading="lazy"></div>
+          </div>
+
+          <!-- Logo Set 3 (Duplicate for Ultrawide Screens) -->
+          <div class="partners-group" aria-hidden="true">
+            <div class="partner-logo-item"><img src="assets/images/clients/client-logo-01.png" alt="" class="partner-logo-img" loading="lazy"></div>
+            <div class="partner-logo-item"><img src="assets/images/clients/client-logo-02.png" alt="" class="partner-logo-img" loading="lazy"></div>
+            <div class="partner-logo-item"><img src="assets/images/clients/client-logo-03.png" alt="" class="partner-logo-img" loading="lazy"></div>
+            <div class="partner-logo-item"><img src="assets/images/clients/client-logo-04.png" alt="" class="partner-logo-img" loading="lazy"></div>
+            <div class="partner-logo-item"><img src="assets/images/clients/client-logo-05.png" alt="" class="partner-logo-img" loading="lazy"></div>
+            <div class="partner-logo-item"><img src="assets/images/clients/client-logo-06.png" alt="" class="partner-logo-img" loading="lazy"></div>
+            <div class="partner-logo-item"><img src="assets/images/clients/client-logo-07.png" alt="" class="partner-logo-img" loading="lazy"></div>
+            <div class="partner-logo-item"><img src="assets/images/clients/client-logo-08.png" alt="" class="partner-logo-img" loading="lazy"></div>
+            <div class="partner-logo-item"><img src="assets/images/clients/client-logo-09.png" alt="" class="partner-logo-img" loading="lazy"></div>
+            <div class="partner-logo-item"><img src="assets/images/clients/client-logo-10.png" alt="" class="partner-logo-img" loading="lazy"></div>
+            <div class="partner-logo-item"><img src="assets/images/clients/client-logo-11.png" alt="" class="partner-logo-img" loading="lazy"></div>
+            <div class="partner-logo-item"><img src="assets/images/clients/client-logo-12.png" alt="" class="partner-logo-img" loading="lazy"></div>
+          </div>
+
+          <!-- Logo Set 4 (Duplicate for Ultrawide Screens) -->
+          <div class="partners-group" aria-hidden="true">
+            <div class="partner-logo-item"><img src="assets/images/clients/client-logo-01.png" alt="" class="partner-logo-img" loading="lazy"></div>
+            <div class="partner-logo-item"><img src="assets/images/clients/client-logo-02.png" alt="" class="partner-logo-img" loading="lazy"></div>
+            <div class="partner-logo-item"><img src="assets/images/clients/client-logo-03.png" alt="" class="partner-logo-img" loading="lazy"></div>
+            <div class="partner-logo-item"><img src="assets/images/clients/client-logo-04.png" alt="" class="partner-logo-img" loading="lazy"></div>
+            <div class="partner-logo-item"><img src="assets/images/clients/client-logo-05.png" alt="" class="partner-logo-img" loading="lazy"></div>
+            <div class="partner-logo-item"><img src="assets/images/clients/client-logo-06.png" alt="" class="partner-logo-img" loading="lazy"></div>
+            <div class="partner-logo-item"><img src="assets/images/clients/client-logo-07.png" alt="" class="partner-logo-img" loading="lazy"></div>
+            <div class="partner-logo-item"><img src="assets/images/clients/client-logo-08.png" alt="" class="partner-logo-img" loading="lazy"></div>
+            <div class="partner-logo-item"><img src="assets/images/clients/client-logo-09.png" alt="" class="partner-logo-img" loading="lazy"></div>
+            <div class="partner-logo-item"><img src="assets/images/clients/client-logo-10.png" alt="" class="partner-logo-img" loading="lazy"></div>
+            <div class="partner-logo-item"><img src="assets/images/clients/client-logo-11.png" alt="" class="partner-logo-img" loading="lazy"></div>
+            <div class="partner-logo-item"><img src="assets/images/clients/client-logo-12.png" alt="" class="partner-logo-img" loading="lazy"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         3. Value Proposition Section
+         ====================================================================== -->
+    <section class="value-prop-section" id="about">
+      <div class="container value-prop-inner reveal-group">
+        <div class="value-prop-header reveal-item">About Studio</div>
+
+        <h2 class="value-prop-headline reveal-item" style="transition-delay: 0.14s;">
+          <span class="text-black">We’ll Make Your Brand a Reality</span>
+        </h2>
+
+        <p class="value-prop-subtext reveal-item" style="transition-delay: 0.28s;">
+          Kalpa Media is a creative agency that specializes in branding, marketing, and design. We want to be your go-to company when you need any innovative solution. Whether you need help with branding or marketing, we have the expertise to get it done right. With our wide range of services, we'll take care of all your needs from start to finish! Let’s work together on something great today!
+        </p>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         4. Bento Grid Features Section
+         ====================================================================== -->
+    <section class="bento-section" id="portfolio">
+      <div class="container">
+        <div class="bento-grid reveal-group">
+          <!-- Card 1: Solid Black Background -->
+          <article class="bento-card card reveal-card bento-card-1">
+            <div class="card-bg-shape"></div>
+            <div class="bento-card-content">
+              <div class="bento-card-top">
+                <span class="card-pill-tag tag-dark">
+                  <span class="tag-dot-yellow"></span> Identity
+                </span>
+              </div>
+              <div class="bento-card-bottom">
+                <div class="card-icon">
+                  <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+                    <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+                    <path d="M2 2l7.586 7.586"></path>
+                    <circle cx="11" cy="11" r="2"></circle>
+                  </svg>
+                </div>
+                <h3 class="bento-card-title">Visual Identity</h3>
+                <p class="bento-card-desc">Crafting memorable brand stories and cohesive design assets that resonate with your target audience.</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2: Solid Black with Vibrant Yellow Kinetic Streaks -->
+          <article class="bento-card card reveal-card bento-card-2">
+            <div class="card-bg-shape"></div>
+            <img src="assets/images/card-impact.svg" alt="Digital Platforms background" class="bento-card-bg">
+            <div class="bento-card-overlay"></div>
+            <div class="bento-card-content">
+              <div class="bento-card-top">
+                <span class="card-pill-tag tag-dark">
+                  <span class="tag-dot-yellow"></span> Platforms
+                </span>
+              </div>
+              <div class="bento-card-bottom">
+                <div class="card-icon">
+                  <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="3" width="20" height="18" rx="2.5"></rect>
+                    <line x1="2" y1="8" x2="22" y2="8"></line>
+                    <circle cx="5" cy="5.5" r="0.8" fill="currentColor"></circle>
+                    <circle cx="8" cy="5.5" r="0.8" fill="currentColor"></circle>
+                    <circle cx="11" cy="5.5" r="0.8" fill="currentColor"></circle>
+                    <path d="M7 13l2.5 2.5L7 18"></path>
+                    <line x1="12.5" y1="18" x2="17" y2="18"></line>
+                  </svg>
+                </div>
+                <h3 class="bento-card-title">Digital Platforms</h3>
+                <p class="bento-card-desc">Building responsive, high-converting websites and custom e-commerce storefronts tailored to your business.</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3: Solid Black with Yellow Neon Speed Stream -->
+          <article class="bento-card card reveal-card bento-card-3">
+            <div class="card-bg-shape"></div>
+            <img src="assets/images/card-creative.svg" alt="Growth Marketing background" class="bento-card-bg">
+            <div class="bento-card-overlay"></div>
+            <div class="bento-card-content">
+              <div class="bento-card-top">
+                <span class="card-pill-tag tag-dark">
+                  <span class="tag-dot-yellow"></span> Marketing
+                </span>
+              </div>
+              <div class="bento-card-bottom">
+                <div class="card-icon">
+                  <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="20" x2="18" y2="10"></line>
+                    <line x1="12" y1="20" x2="12" y2="14"></line>
+                    <line x1="6" y1="20" x2="6" y2="17"></line>
+                    <polyline points="3 13 9 7 14 11 21 3"></polyline>
+                    <polyline points="16 3 21 3 21 8"></polyline>
+                  </svg>
+                </div>
+                <h3 class="bento-card-title">Growth Marketing</h3>
+                <p class="bento-card-desc">Driving measurable engagement through targeted social media campaigns and data-driven strategies.</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 4: Solid Black Background with Yellow Heading -->
+          <article class="bento-card card reveal-card bento-card-4">
+            <div class="card-bg-shape"></div>
+            <div class="bento-card-content">
+              <div class="bento-card-top">
+                <span class="card-pill-tag tag-dark">
+                  <span class="tag-dot-yellow"></span> Content
+                </span>
+              </div>
+              <div class="bento-card-bottom">
+                <div class="card-icon">
+                  <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polygon points="10 8 16 12 10 16 10 8" fill="currentColor"></polygon>
+                  </svg>
+                </div>
+                <h3 class="bento-card-title">Dynamic Content</h3>
+                <p class="bento-card-desc">Captivating your audience with striking motion graphics and innovative visual storytelling.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         5. Services Section (Dark Mode Sticky Two-Column & Card Stack)
+         ====================================================================== -->
+    <section id="services" class="services-section">
+      <div class="container">
+        <div class="services-two-col">
+          <!-- Left Column (Sticky Header) -->
+          <aside class="services-sticky-col">
+            <div class="services-sticky-inner reveal-group">
+              <div class="services-pill reveal-item">
+                <span class="services-pill-dot"></span>
+                <span>Services</span>
+              </div>
+              <h2 class="services-sticky-title reveal-item" style="transition-delay: 0.14s;">Our Expertise</h2>
+              <p class="services-sticky-subtext reveal-item" style="transition-delay: 0.28s;">
+                Comprehensive creative disciplines designed to transform bold visions into high-impact market presence.
+              </p>
+            </div>
+          </aside>
+
+          <!-- Right Column (Card Stack) -->
+          <div class="services-stack-col">
+            <!-- Card 1: Brand Strategy & Identity -->
+            <article class="service-card reveal-card">
+              <div class="service-card-top">
+                <div class="card-media-wrap">
+                  <img src="assets/images/mockup-branding.svg" alt="Brand Strategy and Identity Mockup" class="card-media-img" loading="lazy">
+                </div>
+                <div class="card-deliverables-wrap">
+                  <ul class="service-deliverables">
+                    <li><span class="yellow-bullet-square"></span>Logo Design &amp; Icons</li>
+                    <li><span class="yellow-bullet-square"></span>Color Palette Development</li>
+                    <li><span class="yellow-bullet-square"></span>Typography &amp; Brand Guides</li>
+                    <li><span class="yellow-bullet-square"></span>Brand Positioning Playbook</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="service-card-bottom">
+                <h3 class="card-service-title">Brand Strategy &amp; Identity</h3>
+                <p class="card-service-desc">We build iconic visual identities and strategic brand foundations designed to elevate ambitious companies into uncontested cultural market leaders.</p>
+              </div>
+            </article>
+
+            <!-- Card 2: UI/UX Strategy & Design -->
+            <article class="service-card reveal-card">
+              <div class="service-card-top">
+                <div class="card-media-wrap">
+                  <img src="assets/images/mockup-uiux.svg" alt="UI/UX Strategy and Design Mockup" class="card-media-img" loading="lazy">
+                </div>
+                <div class="card-deliverables-wrap">
+                  <ul class="service-deliverables">
+                    <li><span class="yellow-bullet-square"></span>UI/UX Strategy &amp; Wireframing</li>
+                    <li><span class="yellow-bullet-square"></span>Custom Web &amp; App Interfaces</li>
+                    <li><span class="yellow-bullet-square"></span>Design Systems &amp; Component Kits</li>
+                    <li><span class="yellow-bullet-square"></span>High-Converting Landing Pages</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="service-card-bottom">
+                <h3 class="card-service-title">UI/UX Strategy &amp; Design</h3>
+                <p class="card-service-desc">Engineering fluid, user-centered digital storefronts and bespoke web platforms calibrated for frictionless usability, maximum engagement, and rapid conversion.</p>
+              </div>
+            </article>
+
+            <!-- Card 3: Packaging & Dynamic Content -->
+            <article class="service-card reveal-card">
+              <div class="service-card-top">
+                <div class="card-media-wrap">
+                  <img src="assets/images/mockup-packaging.svg" alt="Packaging and Dynamic Content Mockup" class="card-media-img" loading="lazy">
+                </div>
+                <div class="card-deliverables-wrap">
+                  <ul class="service-deliverables">
+                    <li><span class="yellow-bullet-square"></span>Bespoke Packaging &amp; Box Art</li>
+                    <li><span class="yellow-bullet-square"></span>3D Product Visualization</li>
+                    <li><span class="yellow-bullet-square"></span>Motion Graphics &amp; Reels</li>
+                    <li><span class="yellow-bullet-square"></span>Social Media Content Assets</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="service-card-bottom">
+                <h3 class="card-service-title">Packaging &amp; Dynamic Content</h3>
+                <p class="card-service-desc">Creating tactile retail packaging and scroll-stopping visual motion assets that dominate physical shelves and drive exponential engagement on digital feeds.</p>
+              </div>
+            </article>
+
+            <!-- Card 4: Performance Marketing -->
+            <article class="service-card reveal-card">
+              <div class="service-card-top">
+                <div class="card-media-wrap">
+                  <img src="assets/images/mockup-marketing.svg" alt="Performance Marketing and Analytics Mockup" class="card-media-img" loading="lazy">
+                </div>
+                <div class="card-deliverables-wrap">
+                  <ul class="service-deliverables">
+                    <li><span class="yellow-bullet-square"></span>Search Engine Optimization (SEO)</li>
+                    <li><span class="yellow-bullet-square"></span>Meta &amp; Google Ads</li>
+                    <li><span class="yellow-bullet-square"></span>Conversion Rate Optimization</li>
+                    <li><span class="yellow-bullet-square"></span>Analytics &amp; Reporting</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="service-card-bottom">
+                <h3 class="card-service-title">Performance Marketing</h3>
+                <p class="card-service-desc">We execute data-driven ad campaigns and targeted optimization strategies to maximize your ROI and scale your digital growth efficiently.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         6. Portfolio Section ("Behind the Designs" 3D Curved Arc Carousel)
+         ====================================================================== -->
+    <section id="portfolio" class="portfolio-section">
+      <div class="container portfolio-container">
+        <!-- Section Header Area -->
+        <div class="portfolio-header reveal-group">
+          <div class="portfolio-pill-badge reveal-item">
+            <span class="portfolio-badge-dot"></span>
+            <span>Our Portfolio</span>
+          </div>
+          <h2 class="portfolio-title reveal-item" style="transition-delay: 0.12s;">Behind The Creative Work</h2>
+          <p class="portfolio-subtitle reveal-item" style="transition-delay: 0.24s;">
+            Explore a collection of our creative projects, visual identities, digital experiences, branding, and design solutions.
+          </p>
+          <div class="portfolio-cta-wrap reveal-item" style="transition-delay: 0.36s;">
+            <a href="#contact" class="btn-portfolio-pill">
+              <span>See more Projects</span>
+              <svg class="portfolio-arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Seamless Infinite Horizontal Looping Project Gallery -->
+        <div class="portfolio-gallery-viewport reveal-item" style="transition-delay: 0.15s;" id="portfolio-gallery-viewport" aria-label="Behind the Designs Animated Project Gallery">
+          <div class="portfolio-gallery-track" id="portfolio-gallery-track">
+            <!-- Set of 12 Creative Brand & Packaging Projects -->
+            <div class="portfolio-card">
+              <img src="assets/images/portfolio/portfolio-01-greensynth.jpg" alt="GreenSynth Herbals Logo &amp; Identity" loading="lazy">
+            </div>
+            <div class="portfolio-card">
+              <img src="assets/images/portfolio/portfolio-02-hro.jpg" alt="HRO Natural Stones 3D Brand Mark" loading="lazy">
+            </div>
+            <div class="portfolio-card">
+              <img src="assets/images/portfolio/portfolio-03-didyuh-white.jpg" alt="Didyuh Innovations Minimal Logo" loading="lazy">
+            </div>
+            <div class="portfolio-card">
+              <img src="assets/images/portfolio/portfolio-04-farmbandi.jpg" alt="Farm Bandi Finger Millet Noodles Packaging" loading="lazy">
+            </div>
+            <div class="portfolio-card">
+              <img src="assets/images/portfolio/portfolio-05-didyuh-dark.jpg" alt="Didyuh Innovations Monogram Design" loading="lazy">
+            </div>
+            <div class="portfolio-card">
+              <img src="assets/images/portfolio/portfolio-06-hrudayam.jpg" alt="Hrudayam Calligraphy Brand Emblem" loading="lazy">
+            </div>
+            <div class="portfolio-card">
+              <img src="assets/images/portfolio/portfolio-07-marines-crown.jpg" alt="Marines Crown Seafood Packaging" loading="lazy">
+            </div>
+            <div class="portfolio-card">
+              <img src="assets/images/portfolio/portfolio-08-parishudd.jpg" alt="Parishudd Urad Dal Packaging Pouch" loading="lazy">
+            </div>
+            <div class="portfolio-card">
+              <img src="assets/images/portfolio/portfolio-09-rk-foods.jpg" alt="RK Foods Festive Chariots Artwork" loading="lazy">
+            </div>
+            <div class="portfolio-card">
+              <img src="assets/images/portfolio/portfolio-10-swaram.jpg" alt="Swaram Flute Musical Brand Identity" loading="lazy">
+            </div>
+            <div class="portfolio-card">
+              <img src="assets/images/portfolio/portfolio-11-atinav.jpg" alt="Atinav Enterprises 3D Monogram" loading="lazy">
+            </div>
+            <div class="portfolio-card">
+              <img src="assets/images/portfolio/portfolio-01-greensynth.jpg" alt="GreenSynth Herbals Creative Design" loading="lazy">
+            </div>
+          </div>
+        </div>
+
+        <!-- 4 Process Focus Areas (Matching Reference Website) -->
+        <div class="portfolio-process-row reveal-group">
+          <div class="portfolio-process-item reveal-item">
+            <div class="process-number">
+              <span class="process-hash">#</span><span class="process-digit">01</span>
+            </div>
+            <h4 class="process-title">Strategy &amp; Planning</h4>
+          </div>
+          <div class="portfolio-process-item reveal-item" style="transition-delay: 0.14s;">
+            <div class="process-number">
+              <span class="process-hash">#</span><span class="process-digit">02</span>
+            </div>
+            <h4 class="process-title">Design &amp; Development</h4>
+          </div>
+          <div class="portfolio-process-item reveal-item" style="transition-delay: 0.28s;">
+            <div class="process-number">
+              <span class="process-hash">#</span><span class="process-digit">03</span>
+            </div>
+            <h4 class="process-title">Launch &amp; Growth</h4>
+          </div>
+          <div class="portfolio-process-item reveal-item" style="transition-delay: 0.42s;">
+            <div class="process-number">
+              <span class="process-hash">#</span><span class="process-digit">04</span>
+            </div>
+            <h4 class="process-title">Ongoing Support</h4>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         7. Footer Section
+         ====================================================================== -->
+    <footer class="site-footer" id="contact">
+      <div class="container reveal-group">
+        <!-- Top Centered Logo Mark -->
+        <div class="footer-top-mark reveal-item">
+          <a href="#home" aria-label="Kalpa Media Home">
+            <img src="assets/images/kalpa-footer-logo.png" alt="Kalpa Media — The Smart Design Agency" class="footer-logo-img">
+          </a>
+        </div>
+
+        <!-- Bottom Copyright & Navigation Bar -->
+        <div class="bottom-bar-inner reveal-item" style="transition-delay: 0.16s;">
+          <p>&copy; 2026 Kalpa Media. All rights reserved. Creative &amp; Design Agency.</p>
+          <ul class="bottom-links">
+            <li><a href="#home">Privacy Policy</a></li>
+            <li><a href="#services">Terms of Service</a></li>
+            <li><a href="#portfolio">Instagram</a></li>
+            <li><a href="#contact">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 700" width="100%" height="100%">
+  <defs>
+    <linearGradient id="impactBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#000000" />
+      <stop offset="35%" stop-color="#0A0A00" />
+      <stop offset="65%" stop-color="#141400" />
+      <stop offset="100%" stop-color="#000000" />
+    </linearGradient>
+
+    <linearGradient id="electricYellowGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#B38600" stop-opacity="0" />
+      <stop offset="25%" stop-color="#FFDE59" stop-opacity="0.9" />
+      <stop offset="60%" stop-color="#FFE600" stop-opacity="1" />
+      <stop offset="85%" stop-color="#FFFFE0" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#E6B800" stop-opacity="0" />
+    </linearGradient>
+
+    <filter id="speedYellowGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="15" result="b1" />
+      <feGaussianBlur stdDeviation="28" result="b2" />
+      <feMerge>
+        <feMergeNode in="b2" />
+        <feMergeNode in="b1" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="hBlur" x="-30%" y="-10%" width="160%" height="120%">
+      <feGaussianBlur stdDeviation="35 3" />
+    </filter>
+  </defs>
+
+  <rect width="600" height="700" fill="url(#impactBg)" />
+
+  <!-- Dynamic ambient warmth in vibrant yellow -->
+  <ellipse cx="300" cy="350" rx="250" ry="140" fill="#FFE600" opacity="0.25" filter="url(#hBlur)" />
+
+  <!-- Multiple speed streaks across the center-upper third -->
+  <g filter="url(#speedYellowGlow)">
+    <path d="M 20 280 Q 280 260 580 300" stroke="url(#electricYellowGlow)" stroke-width="48" stroke-linecap="round" filter="url(#hBlur)" />
+    <path d="M 60 282 Q 320 265 540 295" stroke="#FFFFFF" stroke-width="12" stroke-linecap="round" />
+
+    <path d="M 10 350 Q 250 330 590 340" stroke="url(#electricYellowGlow)" stroke-width="65" stroke-linecap="round" filter="url(#hBlur)" />
+    <path d="M 80 348 Q 300 335 520 342" stroke="#FFFFFF" stroke-width="18" stroke-linecap="round" />
+
+    <path d="M 50 420 Q 340 410 570 390" stroke="url(#electricYellowGlow)" stroke-width="32" stroke-linecap="round" filter="url(#hBlur)" />
+    <path d="M 120 418 Q 330 412 480 395" stroke="#FFDE59" stroke-width="8" stroke-linecap="round" />
+  </g>
+
+  <!-- Speed specs and flares -->
+  <circle cx="340" cy="342" r="6" fill="#FFFFFF" opacity="0.95" />
+  <ellipse cx="260" cy="275" rx="30" ry="3" fill="#FFFFAA" opacity="0.85" />
+</svg>

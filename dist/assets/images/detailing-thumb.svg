@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" width="100%" height="100%">
+  <defs>
+    <linearGradient id="detailBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#141414" />
+      <stop offset="50%" stop-color="#080808" />
+      <stop offset="100%" stop-color="#000000" />
+    </linearGradient>
+
+    <linearGradient id="yellowDetailStreak" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFD700" stop-opacity="0" />
+      <stop offset="25%" stop-color="#FFDE59" stop-opacity="0.9" />
+      <stop offset="70%" stop-color="#FFE600" stop-opacity="1" />
+      <stop offset="90%" stop-color="#FFFFFF" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#E6B800" stop-opacity="0" />
+    </linearGradient>
+
+    <filter id="detailYellowGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="7" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="400" height="240" rx="16" fill="url(#detailBg)" stroke="#222222" stroke-width="1" />
+  
+  <!-- Subtle silhouette of luxury car contour -->
+  <path d="M 50 170 Q 120 120 220 110 Q 320 100 370 140" stroke="#333333" stroke-width="2" fill="none" opacity="0.45" />
+  <path d="M 120 118 Q 180 80 270 85 Q 310 100 340 120" stroke="#444444" stroke-width="1.5" fill="none" opacity="0.35" />
+
+  <!-- Neon Vibrant Yellow Light Trail Across Taillight / Body -->
+  <g filter="url(#detailYellowGlow)">
+    <path d="M 140 145 Q 260 130 380 120" stroke="url(#yellowDetailStreak)" stroke-width="14" stroke-linecap="round" />
+    <path d="M 210 138 Q 280 130 350 124" stroke="#FFFFF0" stroke-width="4" stroke-linecap="round" />
+  </g>
+</svg>
