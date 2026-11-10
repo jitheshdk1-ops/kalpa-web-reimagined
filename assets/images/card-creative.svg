@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 700" width="100%" height="100%">
+  <defs>
+    <linearGradient id="creativeBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1A1A1A" />
+      <stop offset="40%" stop-color="#111111" />
+      <stop offset="70%" stop-color="#080808" />
+      <stop offset="100%" stop-color="#000000" />
+    </linearGradient>
+
+    <linearGradient id="neonYellowLaser" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#CC9900" stop-opacity="0" />
+      <stop offset="20%" stop-color="#FFDE59" stop-opacity="0.9" />
+      <stop offset="65%" stop-color="#FFE600" stop-opacity="1" />
+      <stop offset="85%" stop-color="#FFFFFF" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#E6B800" stop-opacity="0" />
+    </linearGradient>
+
+    <filter id="creativeYellowGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="14" result="b1" />
+      <feGaussianBlur stdDeviation="24" result="b2" />
+      <feMerge>
+        <feMergeNode in="b2" />
+        <feMergeNode in="b1" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="600" height="700" fill="url(#creativeBg)" />
+
+  <!-- Smooth sports car curvature in monochrome gray/black -->
+  <path d="M -50 480 Q 150 320 320 280 Q 480 240 650 340" stroke="#333333" stroke-width="4" fill="none" opacity="0.4" />
+  <path d="M 80 340 Q 260 210 440 230 Q 560 260 620 320" stroke="#444444" stroke-width="3" fill="none" opacity="0.3" />
+  <path d="M 180 220 Q 340 180 480 220" stroke="#555555" stroke-width="2" fill="none" opacity="0.25" />
+
+  <!-- Intense Glowing Vibrant Yellow Streamline Cutting Across Car -->
+  <g filter="url(#creativeYellowGlow)">
+    <path d="M 40 370 Q 300 290 580 270" stroke="url(#neonYellowLaser)" stroke-width="36" stroke-linecap="round" />
+    <path d="M 120 355 Q 320 290 520 275" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round" />
+    <path d="M 180 410 Q 360 350 560 320" stroke="#FFE600" stroke-width="14" stroke-linecap="round" opacity="0.8" />
+  </g>
+</svg>

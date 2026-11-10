@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 48" width="100%" height="100%">
+  <defs>
+    <linearGradient id="yellowPillGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#E6B800" />
+      <stop offset="25%" stop-color="#FFDE59" />
+      <stop offset="70%" stop-color="#FFE600" />
+      <stop offset="100%" stop-color="#D4A000" />
+    </linearGradient>
+
+    <linearGradient id="yellowHighlightGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0" />
+      <stop offset="30%" stop-color="#FFFFFF" stop-opacity="0.95" />
+      <stop offset="70%" stop-color="#FFFFF0" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0" />
+    </linearGradient>
+
+    <filter id="yellowPillGlow" x="-20%" y="-30%" width="140%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="b" />
+      <feMerge>
+        <feMergeNode in="b" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Base pill with glowing yellow stroke and black hairline -->
+  <rect x="3" y="3" width="114" height="42" rx="21" fill="url(#yellowPillGrad)" stroke="#000000" stroke-width="1.5" filter="url(#yellowPillGlow)" />
+  
+  <!-- Sleek center horizontal motion light streak -->
+  <path d="M 22 24 H 98" stroke="url(#yellowHighlightGrad)" stroke-width="5" stroke-linecap="round" />
+  <ellipse cx="60" cy="24" rx="14" ry="3" fill="#FFFFFF" opacity="0.95" />
+</svg>
